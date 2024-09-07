@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ home_title }}</title>
+</head>
+<body>
+    <h1>{{ home_header }}</h1>
+    {% if g.user %}
+        {% if g.user.locale == "fr" %}
+            <p>"Vous êtes connecté en tant que {{g.user.name}}."</p>
+        {% else %}
+            <p>You are logged in as {{g.user.name}}.</p>
+        {% endif %}
+    {% else %}
+        <p>You are not logged in.</p>
+    {% endif %}
+</body>
+</html>
